@@ -10,12 +10,15 @@ import {
 import { TiPencil } from "react-icons/ti";
 import { BsTrash } from "react-icons/bs";
 import { useEffect, useState } from "react";
+import Modal from '../UI/Modal';
 
 export default function TasksList() {
   const dispatch = useDispatch();
   const tasksList = useSelector((state) => state.newTask.tasksList);
   const sort = useSelector((state) => state.newTask.sort);
   const [newTask, setNewTask] = useState("");
+  const [openModal, setOpenModal] = useState(false);
+
   useEffect(() => {
     if (tasksList.length > 0) {
       localStorage.setItem("tasksList", JSON.stringify(tasksList));
@@ -76,6 +79,7 @@ export default function TasksList() {
 
   return (
     <>
+      {openModal && <Modal closeModal={setOpenModal} />}
       <div className={classes.tasksContent}>
         <div className={classes.taskForm}>
           <input
@@ -86,9 +90,11 @@ export default function TasksList() {
           />
           <button
             className={classes.submit}
-            onClick={() => {
-              handleAddTask(newTask);
-            }}
+            onClick={() =>
+              {handleAddTask(newTask); {setOpenModal(true)}
+              
+}
+            }
           >
             Add Task
           </button>
