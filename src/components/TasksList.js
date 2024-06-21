@@ -42,6 +42,24 @@ export default function TasksList() {
     }
   };
 
+  const handleUpdate = (id, task) => {
+    if (task.trim().length === 0) {
+      alert("Please Add something!");
+    } else {
+      dispatch(
+        updateTask({
+          task: task,
+          id: id,
+        })
+      );
+    }
+  };
+  const handleDelete = (id) => {
+    const updatedTasksList = tasksList.filter((task) => task.id !== id);
+    dispatch(setTasksList(updatedTasksList));
+    localStorage.setItem("tasksList", JSON.stringify(updatedTasksList));
+  };
+
   const handleSort = (sort) => {
     dispatch(sortTask(sort));
   };
@@ -51,6 +69,11 @@ export default function TasksList() {
     if (sort === "Not Completed" && !task.completed) return true;
     return false;
   });
+
+  const handleToggleCompleted = (id) => {
+    dispatch(toggleCompleted({ id }));
+  };
+
   return (
     <>
       <div className={classes.tasksContent}>
@@ -74,19 +97,39 @@ export default function TasksList() {
           {tasksList.length === 0 ? (
             <>
               <div>
-              <p>No Tasks yet!</p>   
-            </div>
+                <p>No Tasks yet!</p>
+              </div>
             </>
           ) : (
             <div>
+              <div className={classes.sortMenu}>
+                <select onChange={(e) => handleSort(e.target.value)}>
+                  <option value="All">All</option>
+                  <option value="Completed">Completed</option>
+                  <option value="Not Completed">Not Completed</option>
+                </select>
+              </div>
+
               {sortTasksList.map((task) => (
                 <div key={task.id} className={classes.tasks}>
-                  <div className={classes.taskList}>{task.task}</div>
+                  <div
+                    className={
+                      task.completed ? classes.isCompleted : classes.tasksList
+                    }
+                    onClick={() => {
+                      handleToggleCompleted(task.id);
+                    }}
+                  >
+                    {task.task}
+                  </div>
                   <div>
-                    <button className={classes.icons}>
+                    <button className={classes.iconPencil}>
                       <TiPencil />
                     </button>
-                    <button className={classes.icons}>
+                    <button
+                      className={classes.iconDelete}
+                      onClick={() => handleDelete(task.id)}
+                    >
                       <BsTrash />
                     </button>
                   </div>
