@@ -1,11 +1,9 @@
-import AddTask from "./components/AddTask";
-import TasksList from "./components/TasksList";
+import Header from './components/header/Header';
 
 function App() {
   return (
     <>
-    < AddTask />
-    <TasksList />
+      <Header />
     </>
   );
 }

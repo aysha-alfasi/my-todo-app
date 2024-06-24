@@ -1,23 +1,31 @@
-.AddTask {
+.Header {
   text-align: center;
 }
 
 .taskLogo {
   height: 30vmin;
   padding: 1rem;
- 
+  margin-top: 2%;
 }
 
-.header {
-  background-color: #282c3409;
+.Header header {
   height: 70%;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  color: rgba(248, 96, 129, 0.535);
+  color: rgb(247, 140, 164);
 }
 
 h1 {
   font-family: cursive;
+  display: inline;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+@media (min-width: 700px) {
+  .taskLogo {
+    height: 20vmin;
+  }
 }

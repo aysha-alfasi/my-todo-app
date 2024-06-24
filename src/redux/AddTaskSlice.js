@@ -1,6 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-
 const initialState = {
   tasksList: [],
   sort: "All",
@@ -23,11 +22,7 @@ const AddTaskSlice = createSlice({
     sortTask: (state, action) => {
       state.sort = action.payload;
     },
-    updateTask: (state, action) => {
-      const { id, task } = action.payload;
-      const index = state.tasksList.findIndex((task) => task.id === id);
-      state.tasksList[index].task = task;
-    },
+
     toggleCompleted: (state, action) => {
       const { id } = action.payload;
       const index = state.tasksList.findIndex((task) => task.id === id);
@@ -36,6 +31,7 @@ const AddTaskSlice = createSlice({
   },
 });
 
-export const {setTasksList, addTask, sortTask, updateTask, toggleCompleted} = AddTaskSlice.actions
+export const { setTasksList, addTask, sortTask, toggleCompleted } =
+  AddTaskSlice.actions;
 
 export default AddTaskSlice.reducer;

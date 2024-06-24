@@ -1,0 +1,147 @@
+.tasksContent {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(255, 226, 241);
+}
+
+.taskForm {
+  display: flex;
+  flex-direction: column;
+  width: 600px;
+  max-width: 100%;
+  position: relative;
+  bottom: 100;
+  margin-top: 2%;
+}
+
+input {
+  background: rgb(255, 212, 237);
+  width: 100%;
+  border-radius: 50px;
+  border: 3px solid rgb(240, 132, 168);
+  outline: none;
+  padding: 1.5rem 2rem;
+}
+
+input:hover {
+  cursor: pointer;
+}
+
+.submit {
+  border-radius: 50px;
+  color: #feb7e3;
+  background-color: lemonchiffon;
+  cursor: pointer;
+  height: 100%;
+  aspect-ratio: 1;
+  font-size: 15px;
+  font-weight: bold;
+  position: absolute;
+  right: 0;
+  top: 0;
+  border: 3px solid rgb(240, 132, 168);
+}
+
+.submit:hover {
+  cursor: pointer;
+  background-color: rgb(255, 82, 148);
+  transition: background-color 1s;
+}
+
+.watitngImg {
+  height: 40vmin;
+  padding: 1rem;
+  margin-top: 3%;
+  margin-bottom: 10%;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  justify-items: center;
+  margin-bottom: 20%;
+}
+
+.sortMenu {
+  margin: auto;
+  margin-top: 10%;
+}
+
+.sortMenu select {
+  width: 300px;
+  display: inline-block;
+  background-color: lemonchiffon;
+  border-radius: 5px;
+  box-shadow: 0 0 2px rgb(204, 204, 204);
+  transition: all 0.5s ease;
+  position: relative;
+  font-size: 14px;
+  color: #110d0d;
+  height: 100%;
+  text-align: left;
+  border: 1.2px solid black;
+  cursor: pointer;
+  display: block;
+  padding: 8px;
+}
+
+.tasks {
+  display: flex;
+  flex-direction: row;
+  background: rgb(255, 196, 230);
+  margin: 0 1rem 1rem 0;
+  margin-top: 10%;
+  height: 8rem;
+  width: 20rem;
+  border-radius: 0.5rem;
+  padding: 1rem;
+  position: relative;
+}
+
+.btns {
+  position: absolute;
+  bottom: 1rem;
+  right: 1rem;
+}
+
+.iconComplete,
+.iconDelete {
+  border: none;
+  margin: 0 0.6rem;
+  background-color: transparent;
+}
+
+.iconDelete:hover,
+.iconComplete:hover {
+  cursor: pointer;
+}
+.iconComplete {
+  padding: 0.3rem 0.3rem;
+  color: #50c878;
+  font-size: 1.4rem;
+}
+.iconDelete {
+  padding: 0.3rem 0.3rem;
+  color: rgb(246, 96, 96);
+  font-size: 1.3rem;
+}
+
+.iconComplete,
+.iconDelete,
+.taskList {
+  margin: 5px;
+}
+
+.isCompleted {
+  color: rgb(20, 188, 20);
+  margin: 5px;
+}
+
+@media (min-width: 700px) {
+  .watitngImg {
+    height: 25vmin;
+  }
+}
