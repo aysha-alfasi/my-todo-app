@@ -74,6 +74,7 @@ export default function TasksList() {
             value={newTask}
             onChange={(e) => setNewTask(e.target.value)}
             placeholder="write your task here"
+            aria-label="input"
           />
           <motion.button
             whileHover={{ scale: 1.1 }}
@@ -104,6 +105,7 @@ export default function TasksList() {
                   className={classes.watitngImg}
                   src={waiting}
                   alt="picture of a girl teeling that there is no tasks added yet"
+                  aria-label="waiting for tasks"
                 />
               </div>
             </>
@@ -113,6 +115,7 @@ export default function TasksList() {
                 <motion.select
                   whileTap={{ scale: 0.9 }}
                   onChange={(e) => handleSort(e.target.value)}
+                  aria-label="select"
                 >
                   <option className={classes.options} value="All">
                     All ♡⋆˚
@@ -127,7 +130,7 @@ export default function TasksList() {
               </div>
               <AnimatePresence>
                 {sortTasksList.map((task) => (
-                  <motion.div
+                  <motion.li
                     initial={{
                       x: 0,
                       y: 0,
@@ -149,15 +152,11 @@ export default function TasksList() {
                       backgroundColor: "lightgreen",
                     }}
                     key={task.id}
-                    className={classes.tasks}
+                    className={task.completed ? classes.isCompleted :classes.tasks}
                   >
-                    <div
-                      className={
-                        task.completed ? classes.isCompleted : classes.tasksList
-                      }
-                    >
+                    
                       {task.task}
-                    </div>
+                   
                     <div className={classes.trying}></div>
                     <div className={classes.btns}>
                       <motion.button
@@ -167,6 +166,7 @@ export default function TasksList() {
                         onClick={() => {
                           handleToggleCompleted(task.id);
                         }}
+                        aria-label="complete"
                       >
                         <FaHeartCircleCheck />
                       </motion.button>
@@ -175,11 +175,12 @@ export default function TasksList() {
                         whileTap={{ scale: 0.9 }}
                         className={classes.iconDelete}
                         onClick={() => handleDelete(task.id)}
+                        aria-label="delete"
                       >
                         <FaCircleXmark />
                       </motion.button>
                     </div>
-                  </motion.div>
+                  </motion.li>
                 ))}
               </AnimatePresence>
             </div>

@@ -1,7 +1,7 @@
 import mainpic from '../../imgs/todoAppLogo.png';
 import classes from './Header.module.css';
 import { motion } from "framer-motion";
-import TasksList from '../tasksList/TasksList';
+
 
 export default function Header() {
   return (
@@ -20,7 +20,8 @@ export default function Header() {
             transition={{ type: "spring", duration: 0.5 }}
             whileHover={{ scale: 1.1 }}
           >
-            My Daily Tasks
+          My Daily Tasks
+            
           </motion.h1>
         </header>
       </div>
@@ -29,7 +30,7 @@ export default function Header() {
         animate={{ y: 0 }}
         transition={{ type: "spring", duration: 3 }}
       >
-        <TasksList />
+        
       </motion.div>
     </>
   );
