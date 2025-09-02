@@ -149,7 +149,7 @@ export default function TasksList() {
                       y: "-60vw",
                       scale: [1, 1],
                       transition: { type: "spring", duration: 0.7 },
-                      backgroundColor: "lightgreen",
+                     backgroundColor: "lightgreen",
                     }}
                     key={task.id}
                     className={task.completed ? classes.isCompleted :classes.tasks}

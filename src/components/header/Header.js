@@ -1,4 +1,4 @@
-import mainpic from '../../imgs/todoAppLogo.png';
+import mainpic from '../../imgs/newLogo2.png';
 import classes from './Header.module.css';
 import { motion } from "framer-motion";
 

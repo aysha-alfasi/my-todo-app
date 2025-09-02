@@ -135,9 +135,18 @@ input:hover {
   margin: 5px;
 }
 
-.isCompleted {
+ .isCompleted {
   color: rgb(20, 188, 20);
-  margin: 5px;
+  display: flex;
+  flex-direction: row;
+  background: rgb(255, 196, 230);
+  margin: 0 1rem 1rem 0;
+  margin-top: 10%;
+  height: 8rem;
+  width: 20rem;
+  border-radius: 0.5rem;
+  padding: 1rem;
+  position: relative;
 }
 
 @media (min-width: 700px) {
