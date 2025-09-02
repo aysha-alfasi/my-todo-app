@@ -4,7 +4,7 @@ My project is a react super cute web Application for managing todos.✨
 
 ## visual overview 🍓 
 
-<img src='./public/imgs/overViewForMyTodoListProject.gif' width="280" height="400">
+<img src='overViewForMyTodoListProject.gif' width="280" height="400">
 
 
 ## languages 💻
@@ -24,7 +24,7 @@ reactJs, react-redux, redux-toolkit and Framer-Motion.
 
 ## Visual Example for the sort feature 🌟
 
-<img src='./public/imgs/20240624_184904.gif' width="250" height="250"/>
+<img src='20240624_184904.gif' width="250" height="250"/>
 
 ## Managing state 💫
 
