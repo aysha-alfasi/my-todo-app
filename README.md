@@ -4,7 +4,7 @@ My project is a react super cute web Application for managing todos.✨
 
 ## visual overview 🍓 
 
-<img src='overViewForMyTodoListProject.gif' width="280" height="400">
+![Todo App Overview](/todoGif.gif)
 
 
 ## languages 💻
@@ -22,9 +22,6 @@ reactJs, react-redux, redux-toolkit and Framer-Motion.
 3. Delete a task.🤍
 4. Sort completed and active tasks or view them all.💕
 
-## Visual Example for the sort feature 🌟
-
-<img src='20240624_184904.gif' width="250" height="250"/>
 
 ## Managing state 💫
 

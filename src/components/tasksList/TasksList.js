@@ -10,7 +10,7 @@ import {
 import { AnimatePresence, motion } from "framer-motion";
 import { FaHeartCircleCheck } from "react-icons/fa6";
 import { FaCircleXmark } from "react-icons/fa6";
-import waiting from '../../imgs/waiting for your tasks.png';
+import waiting from '../../imgs/newTodoAppImg.png';
 
 export default function TasksList() {
   const dispatch = useDispatch();
@@ -28,7 +28,12 @@ export default function TasksList() {
     if (localTasksList) {
       dispatch(setTasksList(localTasksList));
     }
-  }, []);
+  }, [dispatch]);
+  useEffect(() => {
+  if (tasksList.length === 0 && sort !== "All") {
+    dispatch(sortTask("All"));
+  }
+}, [tasksList, sort, dispatch]);
 
   const handleAddTask = (task) => {
     if (task.trim().length === 0) {
