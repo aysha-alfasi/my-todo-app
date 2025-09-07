@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import Swal from "sweetalert2";
 import classes from './TasksList.module.css';
 import { useDispatch, useSelector } from "react-redux";
 import {
@@ -37,7 +38,18 @@ export default function TasksList() {
 
   const handleAddTask = (task) => {
     if (task.trim().length === 0) {
-      alert("Please Add something!");
+        Swal.fire({
+      toast: true,
+      position: "center",
+      icon: "info",
+      text: "Please write something first!✨",
+      showConfirmButton: false,
+      timer: 2000,
+      timerProgressBar: true,
+      background: "#ffe4ec",
+      color: "#4d4548ff",
+      iconColor: "#ff6f91",
+    });
     } else {
       dispatch(
         addTask({
